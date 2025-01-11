@@ -28,6 +28,13 @@ export default function Product({product}) {
             </Link>
         </div>
     </div>
+    <div>
+    <Link to={`/product/${id}`}>
+    <h1>{category}</h1>
+    </Link>
+        <p>{description}</p>
+        <h2>{price}</h2>
+    </div>
     </div>
   )
 }
