@@ -4,7 +4,11 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { BsPlus, BsEyeFill } from 'react-icons/bs';
 export default function Product({product}) {
-   const {id,category,description,price,image}=product;
+   const {id,category,description,price,image,title}=product;
+
+   function SplitDescription(x){
+    return x.split(' ').slice(0, 5).join(' ') + '...';
+   }
   return (
     <div>
     <div className='border  shadow-lg h-[300px] mb-4 relative overflow-hidden group transition'>
@@ -29,11 +33,14 @@ export default function Product({product}) {
         </div>
     </div>
     <div>
+   
+    <h1 className='text-gray text-sm capitalize mb-1'>{category}</h1>
+ 
+    {/* <p>{SplitDescription(description)}</p> */}
     <Link to={`/product/${id}`}>
-    <h1>{category}</h1>
+    <h2 className='text-semibold mb-1'>{title}</h2>
     </Link>
-        <p>{description}</p>
-        <h2>{price}</h2>
+        <h2 className='text-gray-500 text-xl'>{price}</h2>
     </div>
     </div>
   )

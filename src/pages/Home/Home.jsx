@@ -22,7 +22,7 @@ export default function Home() {
               
             ))
           ) : (
-            <p className="text-gray-500">No products found.</p>
+            <p className="text-gray-500 text-center m-auto text-3xl flex justify-center align-items-center">No products found.</p>
           )}
         </div>
       </div>
